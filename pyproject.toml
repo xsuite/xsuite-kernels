@@ -11,7 +11,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "xsuite_kernels"
+name = "xsuite-kernels"
 authors = [
     {name = "Szymon Łopaciuk", email = "szymon@lopaciuk.eu"}
 ]
