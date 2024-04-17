@@ -43,6 +43,7 @@ xsuite-kernels = "xsuite_kernels.cli:main"
 # bdist can be build including them following the standard PEP 517 procedure
 # using the `build` command.
 [tool.setuptools]
+packages = ["xsuite_kernels"]
 include-package-data = true
 
 [tool.setuptools.package-data]
