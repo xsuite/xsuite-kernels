@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "setuptools>=64",
-#    "setuptools-scm>=8",
+    "setuptools-scm[toml]>=8",
     "xtrack==0.56.1",
     "xfields==0.15.0",
     "xcoll==0.3.5",
@@ -30,7 +30,8 @@ dynamic = ["version"]
 [project.scripts]
 xsuite-kernels = "xsuite_kernels.cli:main"
 
-#[tool.setuptools_scm]
+[tool.setuptools_scm]
+# empty for default configuration
 
 # The very non-obvious way files can be included in either sdist or bdist with
 # setuptools. We need to list the file in:
