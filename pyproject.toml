@@ -64,4 +64,4 @@ build-frontend = "build"
 build-verbosity = 1
 
 [tool.cibuildwheel.macos]
-environment = 'ARCHFLAGS="-arch arm64"'
+environment = 'ARCHFLAGS="-arch $(arch)"'
