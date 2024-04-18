@@ -58,7 +58,7 @@ xsuite_kernels = [
 before-all = [
     "uname -a",
     "arch",
-    "clang --version",
+    "cc --version",
 ]
 build-frontend = "build"
 build-verbosity = 1
