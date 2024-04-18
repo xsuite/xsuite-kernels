@@ -59,6 +59,8 @@ before-all = [
     "uname -a",
     "arch",
     "cc --version",
+    "file `which python` || true",
+    "file `which cc` || true",
 ]
 build-frontend = "build"
 build-verbosity = 1
