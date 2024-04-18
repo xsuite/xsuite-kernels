@@ -59,6 +59,8 @@ skip = [
     "pp*",
     # i686 is not needed or supported
     "*i686",
+    # We don't need musl libc support
+    "*musllinux*",
     # Apparently there's a problem with with Python 3.8 on ARM64 macOS; the
     # x86_64 version is run anyway pulling the x86 cffi library, building
     # x86 dylibs that cannot then be imported properly by the ARM64 Python.
