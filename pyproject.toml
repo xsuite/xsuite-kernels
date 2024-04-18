@@ -17,7 +17,10 @@ authors = [
 ]
 description = "A package supplying binary kernels for Xsuite."
 readme = "README.md"
-requires-python = ">=3.8"
+# Test the theory that cibuildtools has a problem with Python 3.8 on ARM64
+# as it installs the wrong binary for the platform.
+# https://github.com/pypa/cibuildwheel/issues/1278
+requires-python = ">=3.9"
 license = {file = "LICENSE"}
 dependencies = [
     "xtrack==0.56.1",
