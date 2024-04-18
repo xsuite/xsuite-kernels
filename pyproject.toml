@@ -62,4 +62,4 @@ before-all = [
     "file `which python` || true",
     "file `which cc` || true",
 ]
-build-frontend = "build; args: --verbose"
+build-verbosity = 1
