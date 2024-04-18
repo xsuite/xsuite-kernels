@@ -62,9 +62,4 @@ before-all = [
     "file `which python` || true",
     "file `which cc` || true",
 ]
-build-frontend = "build"
-build-verbosity = 1
-
-[[tool.cibuildwheel.overrides]]
-select = "*-macosx_arm64"
-environment = 'ARCHFLAGS="-arch $(arch)"'
+build-frontend = "build; args: --verbose"
