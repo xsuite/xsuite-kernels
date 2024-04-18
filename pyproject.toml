@@ -63,6 +63,6 @@ before-all = [
 build-frontend = "build"
 build-verbosity = 1
 
-[[tool.cibuildwheel.macos.overrides]]
+[[tool.cibuildwheel.overrides]]
 select = "*-macosx_arm64"
 environment = 'ARCHFLAGS="-arch $(arch)"'
