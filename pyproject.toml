@@ -55,6 +55,13 @@ xsuite_kernels = [
 ]
 
 [tool.cibuildwheel]
-before-all = "uname -a && arch"
+before-all = [
+    "uname -a",
+    "arch",
+    "clang --version",
+]
 build-frontend = "build"
 build-verbosity = 1
+
+[tool.cibuildwheel.macos]
+environment = 'ARCHFLAGS="-arch arm64"'
