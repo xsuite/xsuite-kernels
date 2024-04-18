@@ -55,6 +55,6 @@ xsuite_kernels = [
 ]
 
 [tool.cibuildwheel]
-before-all = "uname -a && arch && $CC --version"
+before-all = "uname -a && arch"
 build-frontend = "build"
 build-verbosity = 1
