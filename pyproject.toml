@@ -6,7 +6,6 @@ requires = [
     "xfields==0.15.0",
     "xcoll==0.3.5",
     "xobjects==0.3.1",
-    "ipdb",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -17,10 +16,7 @@ authors = [
 ]
 description = "A package supplying binary kernels for Xsuite."
 readme = "README.md"
-# Test the theory that cibuildtools has a problem with Python 3.8 on ARM64
-# as it installs the wrong binary for the platform.
-# https://github.com/pypa/cibuildwheel/issues/1278
-requires-python = ">=3.9"
+requires-python = ">=3.8"
 license = {file = "LICENSE"}
 dependencies = [
     "xtrack==0.56.1",
@@ -58,11 +54,14 @@ xsuite_kernels = [
 ]
 
 [tool.cibuildwheel]
-before-all = [
-    "uname -a",
-    "arch",
-    "cc --version",
-    "file `which python` || true",
-    "file `which cc` || true",
+skip = [
+    # PyPy does not work for us
+    "pp*",
+    # Apparently there's a problem with with Python 3.8 on ARM64 macOS; the
+    # x86_64 version is run anyway pulling the x86 cffi library, building
+    # x86 dylibs that cannot then be imported properly by the ARM64 Python.
+    # Witnessed on here: https://github.com/pypa/cibuildwheel/issues/1278.
+    # It does not make 100% sense to me, but for now this is the workaround.
+    "cp38-macosx_arm64",
 ]
 build-verbosity = 1
