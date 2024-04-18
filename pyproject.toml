@@ -53,3 +53,8 @@ xsuite_kernels = [
     'lib/*.dll',
     'lib/*.json',
 ]
+
+[tool.cibuildwheel]
+before-all = "uname -a && arch && $CC --version"
+build-frontend = "build"
+build-verbosity = 1
