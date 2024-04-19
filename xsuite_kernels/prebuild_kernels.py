@@ -302,7 +302,7 @@ def regenerate_kernels(kernels=None, location=XSK_PREBUILT_KERNELS_LOCATION):
             elements.append(element)
 
         line = xt.Line(elements=elements)
-        tracker = xt.Tracker(line=line, compile=False)
+        tracker = xt.Tracker(line=line, compile=False, _prebuilding_kernels=True)
         tracker.config.clear()
         tracker.config.update(config)
 
